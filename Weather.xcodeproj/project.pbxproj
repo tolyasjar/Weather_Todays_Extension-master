@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80C8BA61D5AC83B00C689F2 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C80C8BA51D5AC83B00C689F2 /* sky.jpg */; };
 		C8A9EF021D50FE2C005CC9AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9EF011D50FE2C005CC9AC /* AppDelegate.swift */; };
 		C8A9EF041D50FE2C005CC9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9EF031D50FE2C005CC9AC /* ViewController.swift */; };
 		C8A9EF071D50FE2C005CC9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A9EF051D50FE2C005CC9AC /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C80C8BA51D5AC83B00C689F2 /* sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpg; sourceTree = "<group>"; };
 		C8A9EEFE1D50FE2C005CC9AC /* Weather_Todays_Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_Todays_Extension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A9EF011D50FE2C005CC9AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A9EF031D50FE2C005CC9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				C8A9EF011D50FE2C005CC9AC /* AppDelegate.swift */,
 				C8A9EF031D50FE2C005CC9AC /* ViewController.swift */,
 				C8A9EF051D50FE2C005CC9AC /* Main.storyboard */,
+				C80C8BA51D5AC83B00C689F2 /* sky.jpg */,
 				C8A9EF081D50FE2C005CC9AC /* Assets.xcassets */,
 				C8A9EF0A1D50FE2C005CC9AC /* LaunchScreen.storyboard */,
 				C8A9EF0D1D50FE2C005CC9AC /* Info.plist */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A9EF0C1D50FE2C005CC9AC /* LaunchScreen.storyboard in Resources */,
+				C80C8BA61D5AC83B00C689F2 /* sky.jpg in Resources */,
 				C8A9EF091D50FE2C005CC9AC /* Assets.xcassets in Resources */,
 				C8A9EF071D50FE2C005CC9AC /* Main.storyboard in Resources */,
 			);

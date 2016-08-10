@@ -33,9 +33,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     self.locationManager.startUpdatingLocation()
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let latitude = String (self.locationManager.location!.coordinate.latitude)
-        let longitude = String (self.locationManager.location!.coordinate.longitude)
+        let userlocation: CLLocation = locations[0]
+        print("HI")
+        let latitude  =  String (userlocation.coordinate.latitude)
+        let longitude = String (userlocation.coordinate.longitude)
         let weatherAPI = "https://api.forecast.io/forecast/ee590865b8cf07d544c96463ae5d47c5/\(latitude),\(longitude)"
         print(weatherAPI)
         guard let url = NSURL(string: weatherAPI) else {
@@ -47,42 +52,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         session.dataTaskWithURL(url) { (data :NSData?, response :NSURLResponse?, error :NSError?) in
             
-             let jsonData = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                
-                let currentData = jsonData.valueForKey("currently")
-                print (currentData)
+            let jsonData = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
             
-                let temperature = currentData?.valueForKey("temperature") as! Double
-                let windSpeed = currentData?.valueForKey("windSpeed") as! Double
-                let visibility = currentData?.valueForKey("visibility") as! Double
-                let humidity = currentData?.valueForKey("humidity") as! Double
-                let summary = currentData?.valueForKey("summary") as! String
-
-  
+            let currentData = jsonData.valueForKey("currently")
+            print (currentData)
+            
+            let temperature = currentData?.valueForKey("temperature") as! Double
+            let windSpeed = currentData?.valueForKey("windSpeed") as! Double
+            let visibility = currentData?.valueForKey("visibility") as! Double
+            let humidity = currentData?.valueForKey("humidity") as! Double
+            let summary = currentData?.valueForKey("summary") as! String
+            
+            
             dispatch_async(dispatch_get_main_queue(), {
                 
-               self.temperature = String(format:"%.2f",temperature)
-               self.temperatureLabel.text = self.temperature
+                self.temperature = String(format:"%.2f",temperature)
+                self.temperatureLabel.text = self.temperature
                 
-               self.windSpeedLabel.text = String(format:"%.2f",windSpeed)
-               self.visibilityLabel.text = String(format:"%.2f",visibility)
-               self.humidityLabel.text = String(format:"%.2f",humidity)
-               self.summaryLabel.text = summary
-
+                self.windSpeedLabel.text = String(format:"%.2f",windSpeed)
+                self.visibilityLabel.text = String(format:"%.2f",visibility)
+                self.humidityLabel.text = String(format:"%.2f",humidity)
+                self.summaryLabel.text = summary
+                
                 
                 //print(self.temperature)
                 
                 let userDefaults = NSUserDefaults(suiteName: "group.toleenjaradat.WeatherApp")
-                                
+                
                 userDefaults?.setObject(self.temperature, forKey: "Temperature")
                 userDefaults?.synchronize()
                 
             })
             
             }.resume()
+
     }
     
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

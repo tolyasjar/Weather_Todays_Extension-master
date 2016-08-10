@@ -61,5 +61,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The Running App you are trying to use requires GPS data to work properly</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The Running App you are trying to use requires GPS data to work properly</string>
 </dict>
 </plist>
